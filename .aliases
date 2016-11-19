@@ -25,11 +25,11 @@ ls -l'
 alias cv='cd /Users/charles/Cloud/Academic/CV/; ls -l'
 
 ## Random Fun
-alias random='cat /dev/random | hexdump | grep --color=auto "0"'
-alias random2='cat /dev/random | hexdump -C | grep --color=auto "0"'
-alias random3='cat /dev/random | hexdump -o | grep --color=auto "1"' 
-alias random4='cat /dev/random | hexdump -x | grep --color=auto "1"'
-alias random5='cat /dev/random | hexdump -C'
+alias random='cat /dev/urandom | hexdump | grep --color=auto "0"'
+alias random2='cat /dev/urandom | hexdump -C | grep --color=auto "0"'
+alias random3='cat /dev/urandom | hexdump -o | grep --color=auto "1"' 
+alias random4='cat /dev/urandom | hexdump -x | grep --color=auto "1"'
+alias random5='cat /dev/urandom | hexdump -C'
 
 ## Working
 alias update="vi `date +"%Y-%m-%dT%H:%M:%S"`.md"

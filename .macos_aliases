@@ -1,0 +1,14 @@
+################################
+##  Mac-specific CLI aliases  ##
+################################
+
+## Enable single-window mode
+alias single="defaults write com.apple.dock single-app -bool true;
+killall Dock"
+
+## Go back to multiple window mode
+alias multiple="defaults write com.apple.dock single-app -bool
+false; killall Dock"
+
+## kill the goddamn windowserver
+alias killwindow="sudo killall -HUP WindowServer"
