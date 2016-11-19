@@ -1,0 +1,53 @@
+## Navigation
+alias ls='ls -GFha'
+alias ll='ls -lh'
+alias la='ls -lhA'
+alias l='ls'
+alias c='clear'
+alias q='exit'
+
+## Files
+alias df="df -Tha --total"
+alias du="du -ach | sort -h"
+
+## Processes
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
+
+## Reload Shell
+alias rebash='source ~/.bashrc'
+alias rezsh='source ~/.zshrc'
+
+## Directories
+alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls -l'
+alias benjamin='cd 
+/Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; 
+ls -l'
+alias cv='cd /Users/charles/Cloud/Academic/CV/; ls -l'
+
+## Random Fun
+alias random='cat /dev/random | hexdump | grep --color=auto "0"'
+alias random2='cat /dev/random | hexdump -C | grep --color=auto "0"'
+alias random3='cat /dev/random | hexdump -o | grep --color=auto "1"' 
+alias random4='cat /dev/random | hexdump -x | grep --color=auto "1"'
+alias random5='cat /dev/random | hexdump -C'
+
+## Working
+alias update="vi `date +"%Y-%m-%dT%H:%M:%S"`.md"
+
+# File and Directory Colors
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval
+"$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Use this  "alert" alias for long running commands, e.g., sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo 
+error)" "$(history|tail -n1|sed -e 
+'\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
