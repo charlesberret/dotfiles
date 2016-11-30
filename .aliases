@@ -18,11 +18,12 @@ alias rebash='source ~/.bashrc'
 alias rezsh='source ~/.zshrc'
 
 ## Directories
-alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls -l'
+alias home='cd ~; ls'
+alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
 alias benjamin='cd 
 /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; 
-ls -l'
-alias cv='cd /Users/charles/Cloud/Academic/CV/; ls -l'
+ls'
+alias cv='cd /Users/charles/Cloud/Academic/CV/; ls'
 
 ## Random Fun
 alias random='cat /dev/urandom | hexdump | grep --color=auto "0"'

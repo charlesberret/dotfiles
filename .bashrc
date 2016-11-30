@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/Library/TeX/texbin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ## Source Other Bash Configurations

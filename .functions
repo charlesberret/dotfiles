@@ -40,6 +40,35 @@ function csvpreview(){
 	sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
 }
 
+#!/bin/bash
+
+
+#### Tools to convert binary to ascii and so forth
+## change character to binary
+chrbin() {
+  echo $(printf \\$(echo "ibase=2; obase=8; $1" | bc))
+}
+## convert ordinal to binary
+ordbin() {
+  a=$(printf '%d' "'$1")
+  echo "obase=2; $a" | bc
+}
+## convert ascii to binary
+ascii2bin() {
+  echo -n $* | while IFS= read -r -n1 char
+  do
+    ordbin $char | tr -d '\n'
+    echo -n " "
+  done
+}
+## convert binary to ascii
+bin2ascii() {
+  for bin in $*
+  do
+    chrbin $bin | tr -d '\n'
+  done
+}
+
 # who is using the laptop's iSight camera?
 camerausedby() {
 	echo "Checking to see who is using the iSight camera… 📷"
