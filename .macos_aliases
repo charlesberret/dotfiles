@@ -2,6 +2,15 @@
 ##  Mac-specific CLI aliases  ##
 ################################
 
+## Aliases to Open Applications
+alias arduino="open -a Arduino"
+alias atom="open -a Atom\ Beta"
+alias firefox="open -a Firefox"
+
+## Other Application Aliases
+alias which='type -all' # find executables not in bin path
+alias path='echo -e ${PATH//:/\\n}' # give path to executables not in bin path
+
 ## Enable single-window mode
 alias single="defaults write com.apple.dock single-app -bool true;
 killall Dock"

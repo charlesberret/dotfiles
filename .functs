@@ -1,17 +1,12 @@
-## Functions
+#!/usr/local/bin/bash
 
+## Functions
 
 # shorthand for standard pandoc output
 makepdf ()
 {
   pandoc $1.md -o $1.pdf
 }
-
-# cd into whatever is the forefront Finder window.
-cdf() { 
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -39,9 +34,6 @@ function whois() {
 function csvpreview(){
 	sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
 }
-
-#!/bin/bash
-
 
 #### Tools to convert binary to ascii and so forth
 ## change character to binary
@@ -71,7 +63,7 @@ bin2ascii() {
 
 # who is using the laptop's iSight camera?
 camerausedby() {
-	echo "Checking to see who is using the iSight camera… 📷"
+	echo "Checking to see who is using the iSight camera…"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
 	echo -e "Recent camera uses:\n$usedby"
 }
@@ -92,62 +84,84 @@ gifify() {
   fi
 }
 
-# direct it all to /dev/null
-function nullify() {
-  "$@" >/dev/null 2>&1
+## Search different sites with Firefox
+duck() {
+  search=""
+  echo "Searching DuckDuckGo for: $@"
+  for term in $@; do
+    search="$search$term+"
+  done
+  firefox "https://www.duckduckgo.com/?q=$search&ia=web"
 }
-
-define ()
-{
-lynx -dump 
-"http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep 
--m 5 -w "*"  | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
-  if [[ -s  /tmp/templookup.txt ]] ;then
-    until ! read response
-      do
-      echo "${response}"
-      done < /tmp/templookup.txt
-    else
-      echo "Sorry $USER, I can't find the term \"${1}\""
-  fi
-rm -f /tmp/templookup.txt
-}
-
-
-weather ()
-{
-  declare -a WEATHERARRAY
-  WEATHERARRAY=( 'lynx -dump 
-"http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" 
-| grep -A 5 -m 1 "Weather for"')
-  echo ${WEATHERARRAY[@]}
-}
-
-translate ()
-{
-  TRANSLATED='lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i 
--m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//''
-  if [[ ${#TRANSLATED} != 0 ]] ;then
-    echo "echo"${1}" in ${TRANSLATED}"
-  else
-    echo "Sorry, I can not translate "${1}" to ${2}"
-  fi
-}
-
 google() {
   search=""
-  echo "Googling: $@"
+  echo "Searching Google: $@"
   for term in $@; do
-    search="$search%20$term"
+    search="$search$term%20"
   done
-  xdg-open "http://www.google.com/search?q=$search"
+  firefox "https://www.google.com/search?q=$search"
 }
-
 libgen() {
   search=""
   echo "Searching LibraryGenesis: $@"
   for term in $@; do
-     search="$search%20$term"
+     search="$search$term+"
   done
-  xdg-open "http://libgen.io/search.php?req=$search&open=0&res=25&view=simple&phrase=1&column=def"
+  firefox "http://libgen.io/search.php?req=$search&open=0&res=25&view=simple&phrase=1&column=def"
 }
+altern() {
+  search=""
+  echo "Searching AlternativeTo: $@"
+  for term in $@; do
+     search="$search$term-"
+  done
+  firefox "https://alternativeto.net/browse/search/?q=$search" # goes to search page
+  #firefox "https://alternativeto.net/software/$search"
+}
+aaarg() {
+  search=""
+  echo "Searching Aaaaarg for: $@"
+  for term in $@; do
+     search="$search$term+"
+  done
+  firefox "http://aaaaarg.fail/search?query=$search"
+}
+
+## Dependent on Lynx
+# define ()
+# {
+# lynx -dump 
+# "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep 
+# -m 5 -w "*"  | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
+#   if [[ -s  /tmp/templookup.txt ]] ;then
+#     until ! read response
+#       do
+#       echo "${response}"
+#       done < /tmp/templookup.txt
+#     else
+#       echo "Sorry $USER, I can't find the term \"${1}\""
+#   fi
+# rm -f /tmp/templookup.txt
+# }
+# 
+# 
+# weather ()
+# {
+#   declare -a WEATHERARRAY
+#   WEATHERARRAY=( 'lynx -dump 
+# "http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" 
+# | grep -A 5 -m 1 "Weather for"')
+#   echo ${WEATHERARRAY[@]}
+# }
+# 
+# translate ()
+# {
+#   TRANSLATED='lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i 
+# -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//''
+#   if [[ ${#TRANSLATED} != 0 ]] ;then
+#     echo "echo"${1}" in ${TRANSLATED}"
+#   else
+#     echo "Sorry, I can not translate "${1}" to ${2}"
+#   fi
+# }
+

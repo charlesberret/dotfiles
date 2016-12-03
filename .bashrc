@@ -1,17 +1,20 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/Library/TeX/texbin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/Library/TeX/texbin
 
-## Source Other Bash Configurations
+source ~/.bash_profile
 
 ## Alias definitions.
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+#if [ -f ~/.aliases ]; then
+#    ~/.aliases
+#fi
+source ~/.aliases
+source ~/.macos_aliases
 
 ## Function definitions.
-if [ -f ~/.functions ]; then
-    . ~/.functions
-fi
+#if [ -f ~/.functs ]; then
+#  ~/.functs
+#fi
+source ~/.functs
+source ~/.macos_functs
 
 ## Set the standard editor
 export EDITOR=vim
@@ -48,11 +51,6 @@ shopt -s checkwinsize
 
 # improve how less treats non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
 
 # use a colored prompt, if the terminal has the capability
 force_color_prompt=yes
