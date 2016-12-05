@@ -29,7 +29,8 @@ alias rezsh='source ~/.zshrc'
 
 ## Directory Shortcuts
 alias home='cd ~; ls'
-alias sites='/etc/apache2/sites-available/'
+alias sites='cd /etc/apache2/sites-available/; ls'
+alias www='cd /var/www/; ls'
 
 ## Directory Info
 alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
