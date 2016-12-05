@@ -143,17 +143,19 @@ aaarg() {
 #   fi
 # rm -f /tmp/templookup.txt
 # }
-# 
-# 
-# weather ()
-# {
-#   declare -a WEATHERARRAY
-#   WEATHERARRAY=( 'lynx -dump 
-# "http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" 
-# | grep -A 5 -m 1 "Weather for"')
-#   echo ${WEATHERARRAY[@]}
-# }
-# 
+#
+#
+
+weather ()
+{
+  declare -a WEATHERARRAY
+  WEATHERARRAY=( 'lynx -dump
+  "http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" 
+  | grep -A 5 -m 1 "Weather for"')
+  echo ${WEATHERARRAY[@]}
+}
+
+#
 # translate ()
 # {
 #   TRANSLATED='lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i 

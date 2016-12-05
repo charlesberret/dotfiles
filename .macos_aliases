@@ -11,6 +11,15 @@ alias firefox="open -a Firefox"
 alias which='type -all' # find executables not in bin path
 alias path='echo -e ${PATH//:/\\n}' # give path to executables not in bin path
 
+## Aliases to Directories
+alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
+alias archive='cd /Users/charles/Cloud/Books/Research_Resources/; ls'
+alias benjamin='cd /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; ls;'
+alias cv='cd /Users/charles/Cloud/Academic/CV/; ls'
+alias scripts='cd ~/Cloud/Code/MyCode/Scripts/; ls'
+alias dscripts='cd ~/Cloud/Code/MyCode/Scripts/diss-scripts; ls'
+alias code='cd ~/Cloud/Code/; ls'
+
 ## Enable single-window mode
 alias single="defaults write com.apple.dock single-app -bool true;
 killall Dock"

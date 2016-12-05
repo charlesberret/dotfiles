@@ -1,14 +1,24 @@
 ## Navigation
 alias ls='ls -GFha'
 alias ll='ls -lh'
-alias la='ls -lhA'
+alias la='ls -dGFL .*'
 alias l='ls'
 alias c='clear'
 alias q='exit'
+alias mv='mv -iv'
+alias mvcd='mv $1 && cd $1'
 
 ## Files
 alias df="df -Tha --total"
 alias du="du -ach | sort -h"
+alias cp='cp -iv'
+alias mkdir='mkdir -pv'
+alias ll='ls -FGlAhp'
+alias less='less -FSRXc'
+cd() { builtin cd "$@"; ll; }       # Always list directory contents upon 'cd'
+alias cd..='cd ../'                 # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                   # Go back 1 directory level
+alias ...='cd ../../'               # Go back 2 directiry levels
 
 ## Processes
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
@@ -19,9 +29,7 @@ alias rezsh='source ~/.zshrc'
 
 ## Directory Shortcuts
 alias home='cd ~; ls'
-alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
-alias benjamin='cd /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; ls'
-alias cv='cd /Users/charles/Cloud/Academic/CV/; ls'
+alias sites='/etc/apache2/sites-available/'
 
 ## Directory Info
 alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
