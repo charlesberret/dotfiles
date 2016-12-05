@@ -1,20 +1,20 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/Library/TeX/texbin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:
 
-source ~/.bash_profile
+# source ~/.bash_profile
 
 ## Alias definitions.
 #if [ -f ~/.aliases ]; then
 #    ~/.aliases
 #fi
 source ~/.aliases
-source ~/.macos_aliases
+#source ~/.macos_aliases
 
 ## Function definitions.
 #if [ -f ~/.functs ]; then
 #  ~/.functs
 #fi
 source ~/.functs
-source ~/.macos_functs
+#source ~/.macos_functs
 
 ## Set the standard editor
 export EDITOR=vim
@@ -50,19 +50,19 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # improve how less treats non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # use a colored prompt, if the terminal has the capability
-force_color_prompt=yes
+#force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
+#if [ -n "$force_color_prompt" ]; then
+#    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+#	# We have color support; assume it's compliant with Ecma-48
+#	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+#	# a case would tend to support setf rather than setaf.)
+#	color_prompt=yes
+#    else
+#	color_prompt=
+#    fi
+#fi
 

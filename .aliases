@@ -24,7 +24,7 @@ alias ...='cd ../../'               # Go back 2 directiry levels
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
 
 ## Reload Shell
-alias rebash='source ~/.bashrc && source ~/.bash_profile'
+alias rebash='source ~/.bashrc'
 alias rezsh='source ~/.zshrc'
 
 ## Directory Shortcuts
@@ -50,19 +50,19 @@ alias random4='cat /dev/urandom | hexdump -x | grep --color=auto "1"'
 alias random5='cat /dev/urandom | hexdump -C'
 
 ## Working
-alias update="vi `date +"%Y-%m-%dT%H:%M:%S"`.md"
+#alias update="vi `date +"%Y-%m-%dT%H:%M:%S"`.md"
 
 # File and Directory Colors
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+#if [ -x /usr/bin/dircolors ]; then
+#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#    alias ls='ls --color=auto'
+#    alias dir='dir --color=auto'
+#    alias vdir='vdir --color=auto'
+#
+#    alias grep='grep --color=auto'
+#    alias fgrep='fgrep --color=auto'
+#    alias egrep='egrep --color=auto'
+#fi
 
 # Use this  "alert" alias for long running commands, e.g., sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
