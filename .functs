@@ -31,6 +31,16 @@ function whois() {
 	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
 }
 
+# public ip address and location
+function myip() {
+  pubip=$(wget -qO- ipinfo.io/ip)
+  # curl freegeoip.net/xml/198.203.28.43 ## for full xml ip geolocation
+  echo ">>> Public IP Address:"
+  echo $pubip
+  echo ">>> Location:"
+  geoiplookup -f /usr/local/var/GeoIP/GeoLiteCity.dat $pubip
+}
+
 function csvpreview(){
 	sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
 }
@@ -61,12 +71,6 @@ bin2ascii() {
   done
 }
 
-# who is using the laptop's iSight camera?
-camerausedby() {
-	echo "Checking to see who is using the iSight camera…"
-	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
-	echo -e "Recent camera uses:\n$usedby"
-}
 
 # animated gifs from any video
 # from alex sexton   gist.github.com/SlexAxton/4989674

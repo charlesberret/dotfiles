@@ -11,6 +11,9 @@ alias firefox="open -a Firefox"
 alias which='type -all' # find executables not in bin path
 alias path='echo -e ${PATH//:/\\n}' # give path to executables not in bin path
 
+## Script Aliases
+alias gitbookcomp="/Users/charles/Cloud/Code/MyCode/Scripts/diss-scripts/gitbook_compile_pandoc.sh"
+
 ## Aliases to Directories
 alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
 alias archive='cd /Users/charles/Cloud/Books/Research_Resources/; ls'

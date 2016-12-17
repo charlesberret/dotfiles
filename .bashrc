@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:/usr/local/texbin:/usr/local/texbin2:
 
 # source ~/.bash_profile
 
@@ -7,14 +7,14 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:
 #    ~/.aliases
 #fi
 source ~/.aliases
-#source ~/.macos_aliases
+source ~/.macos_aliases
 
 ## Function definitions.
 #if [ -f ~/.functs ]; then
 #  ~/.functs
 #fi
 source ~/.functs
-#source ~/.macos_functs
+source ~/.macos_functs
 
 ## Set the standard editor
 export EDITOR=vim
