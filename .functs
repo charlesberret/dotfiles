@@ -91,7 +91,7 @@ gifify() {
 ## Search different sites with Firefox
 duck() {
   search=""
-  echo "Searching DuckDuckGo for: $@"
+  echo "Searching DuckDuckGo: \"$@\""
   for term in $@; do
     search="$search$term+"
   done
@@ -99,7 +99,7 @@ duck() {
 }
 google() {
   search=""
-  echo "Searching Google: $@"
+  echo "Searching Google: \"$@\""
   for term in $@; do
     search="$search$term%20"
   done
@@ -107,7 +107,7 @@ google() {
 }
 libgen() {
   search=""
-  echo "Searching LibraryGenesis: $@"
+  echo "Searching LibraryGenesis: \"$@\""
   for term in $@; do
      search="$search$term+"
   done
@@ -115,7 +115,7 @@ libgen() {
 }
 altern() {
   search=""
-  echo "Searching AlternativeTo: $@"
+  echo "Searching AlternativeTo: \"$@\""
   for term in $@; do
      search="$search$term-"
   done
@@ -124,7 +124,7 @@ altern() {
 }
 aaarg() {
   search=""
-  echo "Searching Aaaaarg for: $@"
+  echo "Searching Aaaaarg for: \"$@\""
   for term in $@; do
      search="$search$term+"
   done
