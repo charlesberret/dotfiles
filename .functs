@@ -130,6 +130,11 @@ aaarg() {
   done
   firefox "http://aaaaarg.fail/search?query=$search"
 }
+wayback() {
+  search=$1
+  echo "Searching The Wayback Machine for: $1"
+  firefox "https://web.archive.org/web/*/$search"
+}
 
 ## Dependent on Lynx
 # define ()

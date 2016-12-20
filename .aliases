@@ -41,7 +41,7 @@ alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5m
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 
 ## Random Fun
-alias random='cat /dev/urandom | hexdump | grep --color=auto "0"'
+alias random1='cat /dev/urandom | hexdump | grep --color=auto "0"'
 alias random2='cat /dev/urandom | hexdump -C | grep --color=auto "0"'
 alias random3='cat /dev/urandom | hexdump -o | grep --color=auto "1"' 
 alias random4='cat /dev/urandom | hexdump -x | grep --color=auto "1"'
