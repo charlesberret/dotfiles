@@ -25,7 +25,7 @@ alias cdcode='cd ~/Cloud/Code/; ls'
 alias cddl='cd ~/Downloads; ls'
 alias cddeck='cd ~/Deck; ls'
 alias cdshelf='cd ~/Cloud/Shelf; ls'
-alias cdnotes='cd ~/Cloud/Writing/Notes; ls'
+alias cdnotes='cd ~/Cloud/Notes; ls'
 
 ## Enable single-window mode
 alias single="defaults write com.apple.dock single-app -bool true;
