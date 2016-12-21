@@ -136,7 +136,7 @@ wayback() {
   firefox "https://web.archive.org/web/*/$search"
 }
 
-## Dependent on Lynx
+## NEED TO FIX REGEX
 # define ()
 # {
 # lynx -dump 
@@ -164,7 +164,7 @@ weather ()
   echo ${WEATHERARRAY[@]}
 }
 
-#
+## NEED TO FIX REGEX
 # translate ()
 # {
 #   TRANSLATED='lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i 

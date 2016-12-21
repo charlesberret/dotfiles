@@ -10,7 +10,8 @@ alias mvcd='mv $1 && cd $1'
 
 ## Files
 alias df="df -Tha --total"
-alias du="du -ach | sort -h"
+alias dua="du -ach | sort -n" # short for du "all"
+alias dus="du -hs" # short for du "summary"
 alias cp='cp -iv'
 alias mkdir='mkdir -pv'
 alias ll='ls -FGlAhp'
@@ -22,10 +23,6 @@ alias ...='cd ../../'               # Go back 2 directiry levels
 
 ## Processes
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
-
-## Reload Shell
-alias rebash='source ~/.bashrc'
-alias rezsh='source ~/.zshrc'
 
 ## Directory Shortcuts
 alias home='cd ~; ls'

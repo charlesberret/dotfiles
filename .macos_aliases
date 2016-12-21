@@ -15,13 +15,17 @@ alias path='echo -e ${PATH//:/\\n}' # give path to executables not in bin path
 alias gitbookcomp="/Users/charles/Cloud/Code/MyCode/Scripts/diss-scripts/gitbook_compile_pandoc.sh"
 
 ## Aliases to Directories
-alias diss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
-alias archive='cd /Users/charles/Cloud/Books/Research_Resources/; ls'
-alias benjamin='cd /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; ls;'
-alias cv='cd /Users/charles/Cloud/Academic/CV/; ls'
-alias scripts='cd ~/Cloud/Code/MyCode/Scripts/; ls'
-alias dscripts='cd ~/Cloud/Code/MyCode/Scripts/diss-scripts; ls'
-alias code='cd ~/Cloud/Code/; ls'
+alias cddiss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
+alias cdarchive='cd /Users/charles/Cloud/Books/Research_Resources/; ls'
+alias cdbenj='cd /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; ls;'
+alias cdcv='cd /Users/charles/Cloud/Academic/CV/; ls'
+alias cdscripts='cd ~/Cloud/Code/MyCode/Scripts/; ls'
+alias cdscripts='cd ~/Cloud/Code/MyCode/Scripts/diss-scripts; ls'
+alias cdcode='cd ~/Cloud/Code/; ls'
+alias cddl='cd ~/Downloads; ls'
+alias cddeck='cd ~/Deck; ls'
+alias cdshelf='cd ~/Cloud/Shelf; ls'
+alias cdnotes='cd ~/Cloud/Writing/Notes; ls'
 
 ## Enable single-window mode
 alias single="defaults write com.apple.dock single-app -bool true;
