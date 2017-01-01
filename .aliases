@@ -25,9 +25,9 @@ alias ...='cd ../../'               # Go back 2 directiry levels
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
 
 ## Directory Shortcuts
-alias home='cd ~; ls'
-alias sites='cd /etc/apache2/sites-available/; ls'
-alias www='cd /var/www/; ls'
+alias home='cdhome ~; ls'
+alias sites='cdsites /etc/apache2/sites-available/; ls'
+alias www='cdwww /var/www/; ls'
 
 ## Directory Info
 alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
