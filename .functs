@@ -136,6 +136,22 @@ wayback() {
   firefox "https://web.archive.org/web/*/$search"
 }
 
+wiki() {
+  search="$@"
+  ### do not need to parse terms into "foo+bar" form for wikipedia
+  #for term in $@; do
+  #  search="$search$term+"
+  #done
+  echo "Searching Wikipedia for: $search"
+  firefox "https://en.wikipedia.org/w/index.php?search=$search"
+}
+
+wolfram() {
+  search="$@"
+  echo "Searching Wolfram Alpha for: $search"
+  firefox "http://www.wolframalpha.com/input/?i=$search"
+}
+
 ## NEED TO FIX REGEX
 # define ()
 # {
