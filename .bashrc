@@ -17,7 +17,7 @@ source ~/.functs
 source ~/.macos_functs
 
 ## Set the standard editor to nano because vim screws up crontab
-export EDITOR=nano
+# export EDITOR=nano
 
 ## Colors
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$"

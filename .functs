@@ -37,8 +37,13 @@ function myip() {
   # curl freegeoip.net/xml/198.203.28.43 ## for full xml ip geolocation
   echo ">>> Public IP Address:"
   echo $pubip
-  echo ">>> Location:"
-  geoiplookup -f /usr/local/var/GeoIP/GeoLiteCity.dat $pubip
+  if [ -f /usr/local/var/GeoIP/GeoLiteCity.dat ]
+  then
+     echo ">>> Location:"
+     geoiplookup -f /usr/local/var/GeoIP/GeoLiteCity.dat $pubip
+  else
+     echo -e "...\n...\n...\nCannot find the GeoIP locations file.\nDownload from https://dev.maxmind.com/geoip/geoip2/geolite2/\nand place in the /usr/local/var/GeoIP/ directory."
+  fi
 }
 
 function csvpreview(){
@@ -88,7 +93,10 @@ gifify() {
   fi
 }
 
-## Search different sites with Firefox
+#################################################################################
+## Functions to launch web searches
+################################################################################
+
 duck() {
   search=""
   echo "Searching DuckDuckGo: \"$@\""
@@ -97,6 +105,7 @@ duck() {
   done
   firefox "https://www.duckduckgo.com/?q=$search&ia=web"
 }
+
 google() {
   search=""
   echo "Searching Google: \"$@\""
@@ -105,6 +114,7 @@ google() {
   done
   firefox "https://www.google.com/search?q=$search"
 }
+
 libgen() {
   search=""
   echo "Searching LibraryGenesis: \"$@\""
@@ -113,6 +123,7 @@ libgen() {
   done
   firefox "http://libgen.io/search.php?req=$search&open=0&res=25&view=simple&phrase=1&column=def"
 }
+
 altern() {
   search=""
   echo "Searching AlternativeTo: \"$@\""
@@ -122,6 +133,7 @@ altern() {
   firefox "https://alternativeto.net/browse/search/?q=$search" # goes to search page
   #firefox "https://alternativeto.net/software/$search"
 }
+
 aaarg() {
   search=""
   echo "Searching Aaaaarg for: \"$@\""
@@ -130,6 +142,7 @@ aaarg() {
   done
   firefox "http://aaaaarg.fail/search?query=$search"
 }
+
 wayback() {
   search=$1
   echo "Searching The Wayback Machine for: $1"
@@ -152,43 +165,27 @@ wolfram() {
   firefox "http://www.wolframalpha.com/input/?i=$search"
 }
 
-## NEED TO FIX REGEX
-# define ()
-# {
-# lynx -dump 
-# "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep 
-# -m 5 -w "*"  | sed 's/;/ -/g' | cut -d- -f5 > /tmp/templookup.txt
-#   if [[ -s  /tmp/templookup.txt ]] ;then
-#     until ! read response
-#       do
-#       echo "${response}"
-#       done < /tmp/templookup.txt
-#     else
-#       echo "Sorry $USER, I can't find the term \"${1}\""
-#   fi
-# rm -f /tmp/templookup.txt
-# }
-#
-#
-
-weather ()
-{
-  declare -a WEATHERARRAY
-  WEATHERARRAY=( 'lynx -dump
-  "http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" 
-  | grep -A 5 -m 1 "Weather for"')
-  echo ${WEATHERARRAY[@]}
+book() {
+  searchurl="https://www.worldcat.org/search?qt=worldcat_org_all&q="
+  for term in $@; do
+    book="$book$term+"
+  done
+  firefox "$searchurl$book"
 }
 
-## NEED TO FIX REGEX
-# translate ()
-# {
-#   TRANSLATED='lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i 
-# -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//''
-#   if [[ ${#TRANSLATED} != 0 ]] ;then
-#     echo "echo"${1}" in ${TRANSLATED}"
-#   else
-#     echo "Sorry, I can not translate "${1}" to ${2}"
-#   fi
+
+#########################################################################
+#########################################################################
+
+## TODO: define, translate, weather
+# dictionary baseurl: "http://dictionary.reference.com/browse/"
+
+# weather() {
+#   location=""
+#   baseurl="https://www.wunderground.com/cgi-bin/findweather/getForecast?query="
+#   for term in $@; do
+#     location="$location$term+"
+#   done
+#   lynx -dump $baseurl$location
 # }
 
