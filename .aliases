@@ -37,6 +37,9 @@ alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1m
 alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 
+## Audio
+alias granular='mpg123 ~/Music/Open/Granular_2017-01-03_11-21.mp3' # play granular loop
+
 ## Random Fun
 alias random1='cat /dev/urandom | hexdump | grep --color=auto "0"'
 alias random2='cat /dev/urandom | hexdump -C | grep --color=auto "0"'
