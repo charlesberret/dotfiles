@@ -1,7 +1,7 @@
 ## Navigation
-alias ls='ls -GFha'
+alias ls='ls -Fha'
 alias ll='ls -lh'
-alias la='ls -dGFL .*'
+alias la='ls -dFL .*'
 alias l='ls'
 alias c='clear'
 alias q='exit'
