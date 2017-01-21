@@ -62,3 +62,5 @@ force_color_prompt=yes
 #    fi
 #fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

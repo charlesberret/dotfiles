@@ -87,3 +87,5 @@ source ~/.aliases
 source ~/.macos_aliases
 source ~/.functs
 source ~/.macos_functs
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
