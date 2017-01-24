@@ -52,11 +52,11 @@ function csvpreview(){
 
 #### Tools to convert binary to ascii and so forth
 ## change character to binary
-chrbin() {
+char2bin() {
   echo $(printf \\$(echo "ibase=2; obase=8; $1" | bc))
 }
 ## convert ordinal to binary
-ordbin() {
+ord2bin() {
   a=$(printf '%d' "'$1")
   echo "obase=2; $a" | bc
 }
@@ -93,9 +93,9 @@ gifify() {
   fi
 }
 
-#################################################################################
+###############################################################
 ## Functions to launch web searches
-################################################################################
+###############################################################
 
 duck() {
   search=""
@@ -132,6 +132,15 @@ altern() {
   done
   firefox "https://alternativeto.net/browse/search/?q=$search" # goes to search page
   #firefox "https://alternativeto.net/software/$search"
+}
+
+similarto() {
+  search=""
+  echo "Searching for similar sites: \"$@\""
+  for term in $@; do
+    search="$search$term-"
+  done
+  firefox "https://www.similarsites.com/site/$search"
 }
 
 aaarg() {
