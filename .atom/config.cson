@@ -1,0 +1,53 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "7a0ef719-04f6-48f8-81f2-eb1fcb6c5cdb"
+  "atom-material-ui":
+    colors:
+      abaseColor: "#4a555c"
+      accentColor: "#aabd9d"
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "autocomplete-plus":
+    autoActivationDelay: 1000
+    builtinProviderBlacklist: "*.md, *.txt, *.csv"
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "welcome"
+      "wrap-guide"
+      "minimap-autohide"
+    ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    fontFamily: "Hack"
+    fontSize: 13
+    preferredLineLength: 74
+  "exception-reporting":
+    userId: "1b7f9e99-c79c-222a-ba8a-9c5daa9cebe1"
+  minimap:
+    charHeight: 1.2
+    charWidth: 0.8
+    plugins:
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  thesaurus:
+    apiKey: "74708177270037cdc172cedd1e906260"
+  typewriter: {}
+"source.gfm":
+  editor:
+    softWrap: true
