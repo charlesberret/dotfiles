@@ -39,7 +39,7 @@ alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10
 
 ## Audio
 alias granular='mpg123 -q ~/Music/Open/Granular_2017-01-03_11-21.mp3' # play granular loop
-alias granular2='mpg123 -q ~/Music/Open/Granular_2017-01-03_11-21_reverbdrone.mp3' # play granular loop with reverb
+alias granverb='mpg123 -q ~/Music/Open/Granular_2017-01-03_11-21_reverbdrone.mp3' # play granular loop with reverb
 
 ## Random Fun
 alias random1='cat /dev/urandom | hexdump | grep --color=auto "0"'

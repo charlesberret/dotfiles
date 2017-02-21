@@ -25,6 +25,16 @@
       "wrap-guide"
       "minimap-autohide"
     ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".db"
+    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
@@ -33,7 +43,7 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 13
+    fontSize: 12
     preferredLineLength: 74
   "exception-reporting":
     userId: "1b7f9e99-c79c-222a-ba8a-9c5daa9cebe1"
@@ -47,6 +57,8 @@
       pigmentsDecorationsZIndex: 0
   thesaurus:
     apiKey: "74708177270037cdc172cedd1e906260"
+  "tree-view":
+    hideIgnoredNames: true
   typewriter: {}
 "source.gfm":
   editor:
