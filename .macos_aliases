@@ -4,7 +4,7 @@
 
 ## Aliases to Open Applications
 alias arduino="open -a Arduino"
-alias atom="open -a Atom\ Beta"
+#alias atom="open -a Atom\ Beta"
 alias firefox="open -a Firefox"
 
 ## Other Application Aliases

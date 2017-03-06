@@ -4,8 +4,8 @@
       _analyticsUserId: "7a0ef719-04f6-48f8-81f2-eb1fcb6c5cdb"
   "atom-material-ui":
     colors:
-      abaseColor: "#4a555c"
-      accentColor: "#aabd9d"
+      abaseColor: "#5971a7"
+      accentColor: "#625a78"
     fonts:
       fontSize: 14
     tabs:
@@ -39,12 +39,14 @@
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
-      "atom-material-syntax"
+      "ariake-dark-syntax"
     ]
   editor:
     fontFamily: "Hack"
     fontSize: 12
+    lineHeight: 1.8
     preferredLineLength: 74
+    scrollSensitivity: 60
   "exception-reporting":
     userId: "1b7f9e99-c79c-222a-ba8a-9c5daa9cebe1"
   minimap:

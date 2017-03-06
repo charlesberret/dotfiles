@@ -27,8 +27,6 @@ atom-text-editor {
   // background-color: #1E2A32;
 }
 
-
-
 // style UI elements inside atom-text-editor
 atom-text-editor .cursor {
   // border-color: red;
@@ -37,4 +35,15 @@ atom-text-editor .cursor {
 // invisible scrollbars
 body /deep/ ::-webkit-scrollbar {
     display: none !important;
+}
+
+// spellcheck underline is thinner, dashed, pale red
+atom-text-editor.editor .spell-check-misspelling .region {
+  border-bottom: 1px dashed #8a496b;
+}
+
+atom-text-editor, atom-text-editor.editor {
+  .cursors.blink-off .cursor {
+    opacity: 1;
+  }
 }
