@@ -41,9 +41,8 @@ alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5m
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 
 ## Audio
-alias granular='mpg123 -q ~/Music/Open/Granular_2017-01-03_11-21.mp3' # play granular loop
-alias granverb='mpg123 -q  ~/Music/Open/Granular_2017-01-03_11-21_reverbdrone.mp3' # play granular loop with reverb
-alias gransoft='mpg123 -q ~/Music/Open/Granular_2017-01-03_11-21_softdrone.mp3'
+alias granular='play -q ~/Music/Open/Granular_2017-01-03_11-21.mp3' # play granular loop
+alias softdrone='play -q ~/Music/Open/Granular_2017-01-03_11-21_softdrone.mp3'
 
 ## Random Fun
 alias random1='cat /dev/urandom | hexdump | grep --color=auto "0"'

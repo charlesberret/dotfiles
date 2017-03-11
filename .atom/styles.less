@@ -47,3 +47,13 @@ atom-text-editor, atom-text-editor.editor {
     opacity: 1;
   }
 }
+
+// gutter margin
+atom-text-editor .gutter, atom-text-editor.editor .gutter {
+  margin-right: 1em;
+}
+
+// hide deprecation warnings (gap in lower toolbar still signals deprecation)
+.deprecation-cop-status {
+   visibility: hidden;
+}
