@@ -37,7 +37,7 @@ shopt -s histappend # append to the history file, don't overwrite it
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-## check the window size after each command and, if necessary, 
+## check the window size after each command and, if necessary.
 ## update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 

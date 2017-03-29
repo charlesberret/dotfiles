@@ -27,6 +27,8 @@
       "typewriter"
       "script"
       "minimap-pigments"
+      "language-gfm"
+      "markdown-themeable-pdf"
     ]
     ignoredNames: [
       ".git"
@@ -50,9 +52,11 @@
     lineHeight: 1.8
     preferredLineLength: 72
     scrollSensitivity: 60
+    softWrap: true
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "1b7f9e99-c79c-222a-ba8a-9c5daa9cebe1"
+  "language-markdown": {}
   minimap:
     charHeight: 1.2
     charWidth: 0.58
