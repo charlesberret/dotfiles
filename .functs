@@ -2,11 +2,36 @@
 
 ## Functions
 
+##################################################
+###    PANDOC
+##################################################
+
+
 # shorthand for standard pandoc output
 makepdf ()
 {
-  pandoc $1.md -o $1.pdf
+pandoc $1.md -o $1.pdf
 }
+
+#
+pandocloop ()
+{
+echo -e "*** This script will run Pandoc on every file in the"
+echo -e "    current directory and attempt to convert each one"
+echo -e "    to the format you enter below."
+echo -e "*** It does NOT overwrite the original files."
+echo -e "*** New files will be stored in a subdirectory."
+echo
+echo -e "Convert to which format?"
+read outfrmt
+mkdir $outfrmt
+ls -1 | while read file; do
+  pandoc $file -o $outfrmt/$file.$outfrmt;
+  echo -e "created $outfrmt version of $file";
+done
+}
+
+
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {

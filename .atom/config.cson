@@ -4,8 +4,8 @@
       _analyticsUserId: "7a0ef719-04f6-48f8-81f2-eb1fcb6c5cdb"
   "atom-material-ui":
     colors:
-      abaseColor: "#5971a7"
-      accentColor: "#625a78"
+      abaseColor: "#59a7a0"
+      accentColor: "#657586"
     fonts:
       fontSize: 14
     tabs:
@@ -22,13 +22,21 @@
     audioBeep: false
     disabledPackages: [
       "welcome"
-      "wrap-guide"
       "minimap-autohide"
       "typewriter"
-      "script"
       "minimap-pigments"
-      "language-gfm"
       "markdown-themeable-pdf"
+      "atom-shell-commands"
+      "project-manager"
+      "tablr"
+      "github"
+      "metrics"
+      "wrap-guide"
+      "whitespace"
+      "language-gfm"
+      "hey-pane"
+      "atom-clock"
+      "minimap"
     ]
     ignoredNames: [
       ".git"
@@ -48,7 +56,7 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 12
+    fontSize: 11
     lineHeight: 1.8
     preferredLineLength: 72
     scrollSensitivity: 60
@@ -61,10 +69,15 @@
     charHeight: 1.2
     charWidth: 0.58
     plugins:
-      "minimap-autohide": true
+      "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+    textOpacity: 0.6
+  "minimap-plus":
+    devicePixelRatio: true
+    charHeight: 1.6
+    charWidth: 0.8
     textOpacity: 0.8
   thesaurus:
     apiKey: "74708177270037cdc172cedd1e906260"
