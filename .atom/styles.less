@@ -19,6 +19,39 @@
 .tree-view {
   // background-color: whitesmoke;
 }
+// remove Git colors from tree-view
+.tree-view {
+.status-modified,
+.status-added,
+.status-renamed,
+.status-removed {
+color: inherit !important; // remove diff color
+
+&.directory > .list-item {
+  color: inherit !important; // remove diff color
+}
+&.directory.selected > .list-item {
+  color: @text-color-selected !important; // add selected color
+}
+}
+}
+.tree-view:focus li.directory.selected.status-added > .list-item::after {
+background-color: # !important;
+}
+
+.tree-view:focus li:not(.list-nested-item).selected.status-added::before, tree-view:focus li.list-nested-item > .list-item.selected.status-added::before {
+background-color: # !important;
+}
+
+status-bar .git-view {
+visibility: hidden !important;
+width: 0 !important;
+}
+// hide the tree view dock button
+.atom-dock-toggle-button-visible
+{
+    display: none;
+}
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {

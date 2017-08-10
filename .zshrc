@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/charles/.oh-my-zsh
@@ -51,16 +51,18 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(colored-man-pages git sudo web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 ## CUSTOM FUNCTIONS AND ALIASES
-source ~/.functs
-source ~/.macos_functs
+## NB: many of the custom functions I've written for BASH
+##     are available as plugins for ZSH
+# source ~/.functs
+# source ~/.macos_functs
 
-source ~/.aliases
-source ~/.macos_aliases
+# source ~/.aliases
+# source ~/.macos_aliases
 
 # User configuration
 
@@ -70,17 +72,17 @@ source ~/.macos_aliases
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nano'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

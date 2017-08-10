@@ -4,7 +4,7 @@
       _analyticsUserId: "7a0ef719-04f6-48f8-81f2-eb1fcb6c5cdb"
   "atom-material-ui":
     colors:
-      abaseColor: "#59a7a0"
+      abaseColor: "#b4d1ce"
       accentColor: "#657586"
     fonts:
       fontSize: 14
@@ -13,7 +13,6 @@
     treeView:
       compactList: true
     ui:
-      panelContrast: true
       panelShadows: true
   "autocomplete-plus":
     autoActivationDelay: 1000
@@ -51,9 +50,11 @@
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
-      "atom-material-ui"
-      "kreuzberg-light-syntax"
+      "one-dark-ui"
+      "ariake-dark-syntax"
     ]
+  "dash-ui":
+    themeColor: "Teal"
   editor:
     fontFamily: "Hack"
     fontSize: 11
@@ -75,9 +76,9 @@
       pigmentsDecorationsZIndex: 0
     textOpacity: 0.6
   "minimap-plus":
-    devicePixelRatio: true
     charHeight: 1.6
     charWidth: 0.8
+    devicePixelRatio: true
     textOpacity: 0.8
   thesaurus:
     apiKey: "74708177270037cdc172cedd1e906260"

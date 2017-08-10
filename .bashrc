@@ -1,4 +1,5 @@
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:/usr/local/texbin:/usr/local/texbin2:
+export EDITOR=nano
 
 # source ~/.bash_profile
 
