@@ -27,7 +27,7 @@ alias radiodeath="networksetup -switchtolocation radiodeath" ##turn radios off
 
 ## Applications
 # alias atom='atom-beta'
-alias todo='todo.sh -d /Users/charles/Cloud/Notes/todo.cfg'
+alias todo='todo.sh -d ~/todo.cfg'
 
 ## Processes
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
