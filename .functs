@@ -3,6 +3,60 @@
 ## Functions
 
 ##################################################
+###  COMMS
+##################################################
+
+#radiodeath () {
+#echo -e "hardware comm interface status\n\n"
+#networksetup -listallnetworkservices
+#networksetup -setairportpower en0 off
+#blueutil off
+## this would activate 'airplane mode'
+# networksetup -switchtolocation isolatedalias
+## check bluetooth status
+# echo -e "Bluetooth Interface"
+# blueutil status
+# echo e "RADIO STATUS CHECK"
+# networksetup -listallnetworkservices
+#}
+
+# radiolife () {
+#networksetup -setairportpower en0 on
+# networksetup -listallnetworkservices
+# }
+
+
+
+##################################################
+###    GIT
+##################################################
+
+
+# Calculate writing word diff between revisions. Cribbed / modified from:
+# https://stackoverflow.com/questions/2874318/quantifying-the-amount-of-change-in-a-git-diff
+
+function git_words_added {
+  git diff --word-diff=porcelain | \
+    grep -e "^+[^+]" | \
+    wc -w | \
+    xargs
+}
+
+function git_words_removed {
+  git diff --word-diff=porcelain | \
+    grep -e "^-[^-]" | \
+    wc -w | \
+    xargs
+}
+
+function git_words_diff {
+  echo $(($(git_words_added $1) - $(git_words_removed $1)))
+}
+
+
+
+
+##################################################
 ###    PANDOC
 ##################################################
 

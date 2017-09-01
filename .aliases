@@ -21,8 +21,13 @@ alias cd..='cd ../'                 # Go back 1 directory level (for fast typers
 alias ..='cd ../'                   # Go back 1 directory level
 alias ...='cd ../../'               # Go back 2 directiry levels
 
+## Comms
+alias radiolife="networksetup -switchtolocation radiolife" ##turn radios on
+alias radiodeath="networksetup -switchtolocation radiodeath" ##turn radios off
+
 ## Applications
 # alias atom='atom-beta'
+alias todo='todo.sh -d /Users/charles/Cloud/Notes/todo.cfg'
 
 ## Processes
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # pass process as argument
