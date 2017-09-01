@@ -31,30 +31,38 @@
 ###    GIT
 ##################################################
 
+# Calculate word diff between revisions of written work.
 
-# Calculate writing word diff between revisions. Cribbed / modified from:
-# https://stackoverflow.com/questions/2874318/quantifying-the-amount-of-change-in-a-git-diff
-
-function git_words_added {
+## short for "git words added"
+function gwa {
   git diff --word-diff=porcelain | \
     grep -e "^+[^+]" | \
     wc -w | \
     xargs
 }
 
-function git_words_removed {
+## short for "git words removed"
+function gwr {
   git diff --word-diff=porcelain | \
     grep -e "^-[^-]" | \
     wc -w | \
     xargs
 }
-
-function git_words_diff {
-  echo $(($(git_words_added $1) - $(git_words_removed $1)))
+## short for "git words diff"
+function gwd {
+  echo $(($(gwa $1) - $(gwr $1)))
 }
 
-
-
+## git word diff summary
+function monster {
+  echo -e "\n------------------\nWords Written: "
+  gwa
+  echo -e "------------------\nWords Deleted: "
+  gwr
+  echo -e "------------------\nLength Accumulated: "
+  gwd
+  echo -e "------------------\nBe sure to write again tomorrow!\n\n*%$&#@#^#&$%\n"
+}
 
 ##################################################
 ###    PANDOC

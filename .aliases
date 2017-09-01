@@ -1,8 +1,8 @@
 ## Navigation
-alias ls='ls -Fha'
-alias ll='ls -lh'
-alias la='ls -dFL .*'
-alias l='ls'
+#alias ls='ls -Fha'
+#alias ll='ls -l'
+#alias la='ls -dFL .*'
+alias l='ls -Fha'
 alias c='clear'
 alias q='exit'
 alias mv='mv -iv'
@@ -14,7 +14,6 @@ alias dua="du -ach | sort -n" # short for du "all"
 alias dus="du -hs" # short for du "summary"
 alias cp='cp -iv'
 alias mkdir='mkdir -pv'
-alias ll='ls -FGlAhp'
 alias less='less -FSRXc'
 cd() { builtin cd "$@"; ll; }       # Always list directory contents upon 'cd'
 alias cd..='cd ../'                 # Go back 1 directory level (for fast typers)
