@@ -4,29 +4,11 @@
 
 ## Aliases to Open Applications
 alias arduino="open -a Arduino"
-#alias atom="open -a Atom\ Beta"
 alias firefox="open -a Firefox"
 
 ## Other Application Aliases
 alias which='type -all' # find executables not in bin path
 alias path='echo -e ${PATH//:/\\n}' # give path to executables not in bin path
-
-## Script Aliases
-alias gitbookcomp="/Users/charles/Cloud/Code/MyCode/Scripts/diss-scripts/gitbook_compile_pandoc.sh"
-
-## Aliases to Directories
-alias cddiss='cd /Users/charles/Cloud/Writing/Gitbooks/cberret/diss; ls'
-alias cdarchive='cd /Users/charles/Cloud/Books/Research_Resources/; ls'
-alias cdbenj='cd /Users/charles/Cloud/Writing/Essays/Active/Benjamin_on_Printing/revise_resubmit; ls;'
-alias cdcv='cd /Users/charles/Cloud/Academic/CV/; ls'
-alias cdscripts='cd ~/Cloud/Code/MyCode/Scripts/; ls'
-alias cddscript='cd ~/Cloud/Code/MyCode/Scripts/diss-scripts; ls'
-alias cduscript='cd ~/Cloud/Code/MyCode/Scripts/utility-scripts; ls'
-alias cdcode='cd ~/Cloud/Code/; ls'
-alias cddl='cd ~/Downloads; ls'
-alias cddeck='cd ~/Deck; ls'
-alias cdshelf='cd ~/Cloud/Shelf; ls'
-alias cdnotes='cd ~/Cloud/Notes; ls'
 
 ## Enable single-window mode
 alias single="defaults write com.apple.dock single-app -bool true;

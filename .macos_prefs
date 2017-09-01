@@ -6,19 +6,24 @@
 
 ## Shell integration for iTerm2
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+echo "*"
 
 ## Set the standard editor to nano because vim screws up crontab
 export EDITOR=nano
+echo "*"
 
 ## key repeat rate, e.g. how quickly the cursor moves
 # defaults write -g InitialKeyRepeat -init 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+echo "*"
 
 # Ask for the administrator password upfront
 # sudo -v
+# echo "*"
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+echo "*"
 
 ##############################################################################
 
@@ -27,9 +32,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #sudo scutil --set HostName "0x6D746873"
 #sudo scutil --set LocalHostName "0x6D746873"
 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
-
+#echo "*"
+#
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
+echo "*"
 
 ## Menu bar: hide the Time Machine, Volume, and User icons
 # for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -43,28 +50,36 @@ sudo nvram SystemAudioVolume=" "
 # 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 # 	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
 # 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+#echo "*"
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+echo "*"
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+echo "*"
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
+echo "*"
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+echo "*"
 
 # Disable the crash reporter
-#defaults write com.apple.CrashReporter DialogType -string "none"
+defaults write com.apple.CrashReporter DialogType -string "none"
+echo "*"
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+echo "*"
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
+echo "*"
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -72,17 +87,21 @@ sudo systemsetup -setrestartfreeze on
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
+echo "*"
 
 # Remove the sleep image file to save disk space
 sudo rm /private/var/vm/sleepimage
+echo "*"
+
 # Create a zero-byte file instead…
 sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /private/var/vm/sleepimage
+echo "*"
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
-
+echo "*"
 
 ###############################################################################
 # Finder                                                                      #
@@ -90,51 +109,64 @@ sudo pmset -a sms 0
 
 ## Change default save location from icloud to hard drive
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+echo "*"
 
 ## Finder: enable quicklook (quick look) text to be selected and copied
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
+echo "*"
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
+echo "*"
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+echo "*"
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
+echo "*"
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+echo "*"
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+echo "*"
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+echo "*"
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+echo "*"
 
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+echo "*"
 
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+echo "*"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+echo "*"
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
+echo "*"
 
 # Remove Dropbox’s green checkmark icons in Finder
 file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 [ -e "${file}" ] && mv -f "${file}" "${file}.bak"
-
+echo "*"
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -142,33 +174,41 @@ file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
+echo "*"
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
+echo "*"
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
+echo "*"
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
 #defaults write com.apple.dock persistent-apps -array
-
+#echo "*"
+#
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
+#echo "*"
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
+echo "*"
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
+echo "*"
 
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
+echo "*"
 
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
-
+echo "*"
 
 ###############################################################################
 # Mail                                                                        #
@@ -176,6 +216,7 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+echo "*"
 
 ###############################################################################
 # Spotlight                                                                   #
@@ -205,13 +246,19 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+echo "*"
+
 # Load new settings before rebuilding the index
 killall mds > /dev/null 2>&1
+echo "*"
+
 # Make sure indexing is enabled for the main volume
 sudo mdutil -i on / > /dev/null
+echo "*"
+
 # Rebuild the index from scratch
 # sudo mdutil -E / > /dev/null
-
+#echo "*"
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -219,16 +266,20 @@ sudo mdutil -i on / > /dev/null
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+echo "*"
 
 # Visualize CPU usage in the Activity Monitor Dock icon
 defaults write com.apple.ActivityMonitor IconType -int 5
+echo "*"
 
 # Show all processes in Activity Monitor
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
+echo "*"
 
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+echo "*"
 
 
 ###############################################################################
@@ -237,25 +288,33 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
+echo "*"
 
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 defaults write com.apple.dashboard devmode -bool true
+echo "*"
 
 # Enable the debug menu in iCal (pre-10.8)
 defaults write com.apple.iCal IncludeDebugMenu -bool true
+echo "*"
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+echo "*"
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+echo "*"
 
 # Enable the debug menu in Disk Utility
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
+echo "*"
 
 # Auto-play videos when opened with QuickTime Player
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
+echo "*"
 
 
 ###############################################################################
@@ -264,30 +323,39 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+echo "*"
 
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
+echo "*"
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+echo "*"
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+echo "*"
 
 # Download newly available updates in background
 defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+echo "*"
 
 # Install System data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+echo "*"
 
 # Automatically download apps purchased on other Macs
 defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+echo "*"
 
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
+echo "*"
 
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
+echo "*"
 
 
 ###############################################################################
@@ -296,7 +364,7 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
+echo "*"
 
 ###############################################################################
 # Transmission.app                                                            #
@@ -305,15 +373,19 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
 defaults write org.m0k.transmission MagnetOpenAsk -bool false
+echo "*"
 
 # Trash original torrent files
 defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+echo "*"
 
-# Hide the donate message
+# Hide the donate message (sorry!)
 defaults write org.m0k.transmission WarningDonate -bool false
+echo "*"
+
 # Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
-
+echo "*"
 
 ###############################################################################
 # Twitter.app                                                                 #
@@ -321,13 +393,18 @@ defaults write org.m0k.transmission WarningLegal -bool false
 
 # Enable the hidden ‘Develop’ menu
 defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+echo "*"
 
 # Allow closing the ‘new tweet’ window by pressing `Esc`
 defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
+echo "*"
 
 # Show full names rather than Twitter handles
 defaults write com.twitter.twitter-mac ShowFullNames -bool true
+echo "*"
 
 # Hide the app in the background if it’s not the front-most window
 defaults write com.twitter.twitter-mac HideInBackground -bool true
+echo "*"
 
+echo "Mac is better now."

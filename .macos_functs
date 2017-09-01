@@ -3,8 +3,8 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
-# who is using the laptop's iSight camera?
-camerausedby() {
+# who is using the laptop's iSight camera? just curious...
+wuc() { # for "who is using the camera?"
   echo "Checking to see who is using the iSight camera…"
   usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
   echo -n "Recent camera uses: " $usedby
