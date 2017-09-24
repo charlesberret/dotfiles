@@ -24,6 +24,9 @@ alias ...='cd ../../'               # Go back 2 directiry levels
 alias radiolife="networksetup -switchtolocation radiolife" ##turn radios on
 alias radiodeath="networksetup -switchtolocation radiodeath" ##turn radios off
 
+## Backups
+alias zdump="scp ./* polytonic.net:/files/archive/z/ && rm ./*"
+
 ## Applications
 # alias atom='atom-beta'
 alias todo='todo.sh -d ~/todo.cfg'

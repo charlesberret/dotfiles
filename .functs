@@ -53,17 +53,17 @@ function gwd {
   echo $(($(gwa $1) - $(gwr $1)))
 }
 
-## git word diff summary
-function monster {
-  echo -e "\n------------------\nWords Written: "
-  gwa
-  echo -e "------------------\nWords Deleted: "
-  gwr
-  echo -e "------------------\nLength Accumulated: "
-  gwd
-  echo -e "------------------\nBe sure to write again tomorrow!\n\n*%$&#@#^#&$%\n"
-}
-
+## git word diff summary ## now linked in /usr/local/bin/ 
+#function monster {
+#  echo -e "\n------------------\nWords Written: "
+#  gwa
+#  echo -e "------------------\nWords Deleted: "
+#  gwr
+#  echo -e "------------------\nLength Accumulated: "
+#  gwd
+#  echo -e "------------------\nBe sure to write again tomorrow!\n\n*%$&#@#^#&$%\n"
+#}
+#
 ##################################################
 ###    PANDOC
 ##################################################
@@ -72,7 +72,7 @@ function monster {
 # shorthand for standard pandoc output
 makepdf ()
 {
-pandoc $1.md -o $1.pdf
+pandoc $1.markdown -o $1.pdf
 }
 
 #

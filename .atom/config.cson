@@ -34,8 +34,6 @@
       "whitespace"
       "language-gfm"
       "hey-pane"
-      "atom-clock"
-      "minimap"
       "zentabs"
     ]
     ignoredNames: [
