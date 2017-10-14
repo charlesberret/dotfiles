@@ -24,9 +24,6 @@ alias ...='cd ../../'               # Go back 2 directiry levels
 alias radiolife="networksetup -switchtolocation radiolife" ##turn radios on
 alias radiodeath="networksetup -switchtolocation radiodeath" ##turn radios off
 
-## Backups
-alias zdump="scp ./* polytonic.net:/files/archive/z/ && rm ./*"
-
 ## Applications
 # alias atom='atom-beta'
 alias todo='todo.sh -d ~/todo.cfg'
@@ -46,11 +43,6 @@ alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden 
 alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
 alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
-
-## Audio
-alias granular='play -q ~/Music/Open/Granular_2017-01-03_11-21.mp3' # play granular loop
-alias softdrone='play -q ~/Music/Open/Granular_2017-01-03_11-21_softdrone.mp3'
-alias smoothdrone='play -q ~/Music/Open/Granular_2017-01-03_11-21_smoothdrone.mp3'
 
 ## Random Fun
 alias random1='cat /dev/urandom | hexdump | grep --color=auto "0"'
