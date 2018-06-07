@@ -1,4 +1,5 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:/usr/local/texbin:/usr/local/texbin2:
+# osx path is set in /etc/paths
+# export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:/usr/local/bin/python:/usr/bin/python
 export EDITOR=nano
 
 # source ~/.bash_profile
