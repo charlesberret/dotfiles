@@ -1,87 +1,54 @@
 "*":
   "atom-beautify":
-    general:
-      _analyticsUserId: "7a0ef719-04f6-48f8-81f2-eb1fcb6c5cdb"
+    markdown:
+      default_beautifier: "Prettier"
   "atom-material-ui":
     colors:
-      abaseColor: "#b4d1ce"
-      accentColor: "#657586"
-    fonts:
-      fontSize: 14
+      abaseColor: "#437388"
+      accentColor: "#96b7d9"
     tabs:
       compactTabs: true
-    treeView:
-      compactList: true
-    ui:
-      panelShadows: true
   "autocomplete-plus":
-    autoActivationDelay: 1000
-    builtinProviderBlacklist: "*.md, *.txt, *.csv"
+    fileBlacklist: [
+      "*.md"
+      "*.mmd"
+      "*.markdown"
+      "*.txt"
+    ]
+  "bracket-matcher":
+    autocompleteBrackets: false
   core:
-    audioBeep: false
     disabledPackages: [
-      "welcome"
-      "minimap-autohide"
-      "typewriter"
-      "minimap-pigments"
-      "markdown-themeable-pdf"
-      "atom-shell-commands"
-      "project-manager"
-      "tablr"
-      "github"
-      "metrics"
-      "wrap-guide"
-      "whitespace"
       "language-gfm"
-      "hey-pane"
-      "zentabs"
+      "wrap-guide"
+      "file-icons"
+      "seti-icons"
+      "minimap-autohide"
+      "teletype"
     ]
-    ignoredNames: [
-      ".git"
-      ".hg"
-      ".svn"
-      ".DS_Store"
-      "._*"
-      "Thumbs.db"
-      "desktop.ini"
-      ".db"
-    ]
-    openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
-      "material-ui"
-      "ariake-dark-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
-  "dash-ui":
-    themeColor: "Teal"
+    titleBar: "custom-inset"
   editor:
-    fontFamily: "Hack"
-    lineHeight: 1.8
-    preferredLineLength: 72
-    scrollSensitivity: 60
+    fontSize: 13
+    invisibles: {}
+    showInvisibles: true
     softWrap: true
     softWrapAtPreferredLineLength: true
   "exception-reporting":
-    userId: "1b7f9e99-c79c-222a-ba8a-9c5daa9cebe1"
-  "language-markdown": {}
+    userId: "ab1e73cb-039b-47e7-b136-737e3945f485"
   minimap:
-    charHeight: 1.2
-    charWidth: 0.58
+    moveCursorOnMinimapClick: true
     plugins:
-      "minimap-autohide": false
+      "minimap-autohide": true
       "minimap-autohideDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
-    textOpacity: 0.8
-  "minimap-plus":
-    charHeight: 1.6
-    charWidth: 0.8
-    devicePixelRatio: true
-  thesaurus:
-    apiKey: "74708177270037cdc172cedd1e906260"
+    textOpacity: 0.4
   "tree-view":
-    hideIgnoredNames: true
-  typewriter: {}
-"source.gfm":
-  editor:
-    softWrap: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false

@@ -82,11 +82,109 @@ atom-text-editor, atom-text-editor.editor {
 }
 
 // gutter margin
-atom-text-editor .gutter, atom-text-editor.editor .gutter {
+atom-text-editor .gutter {
   margin-right: 1em;
+}
+// main editor window margin
+atom-text-editor.editor {
+  margin-top: .5em;
 }
 
 // hide deprecation warnings (gap in lower toolbar still signals deprecation)
 .deprecation-cop-status {
    visibility: hidden;
 }
+
+// Custom colors
+
+// Markdown syntax
+
+// atom-text-editor.editor {
+// .syntax--source.syntax--md {
+//   .syntax--meta.syntax--bold {
+//   color: darken(@syntax-text-color, 10%);
+//   }
+//   .syntax--meta.syntax--italic {
+//     color: darken(@syntax-text-color, 10%);
+//   }
+//   .syntax--meta.syntax--heading {
+//     color: lighten(@cyan, 15%);
+//   }
+//   .syntax--meta.syntax--quote {
+//     color: lighten(@gray, 20%);
+//   }
+//   .syntax--meta.syntax--comment {
+//     color: @dark-gray;
+//   }
+//   .syntax--meta.syntax--ordered {
+//     color: @gray;
+//   }
+//   .syntax--meta.syntax--unordered {
+//     color: lighten(@gray, 20%);
+//   }
+//   .syntax--meta.syntax--punctuation {
+//     color: darken(@gray, 10%);
+//   }
+//   .syntax--meta.syntax--reference {
+//     color: @blue;
+//   }
+//   .syntax--meta.syntax--link {
+//     color: @syntax-text-color;
+//   }
+// }
+
+// atom-text-editor::shadow {
+//   .markup.md {
+//      .heading-1 {
+//        color: @blue;
+//      }
+//      .heading-2 {
+//        color: @green;
+//      }
+//      .heading-3 {
+//        color: @green;
+//      }
+//      .heading-4 {
+//        color: @green;
+//      }
+//      .heading-5 {
+//        color: @green;
+//      }
+//      .heading-6 {
+//        color: @green;
+//      }
+//    }
+//   .markup.md {
+//     &.bold {
+//       color: @light-gray;
+//       font-weight: bold;
+//     }
+//     &.italic {
+//       color: @light-gray;
+//       font-style: italic;
+//     }
+//     &.list {
+//       .punctuation {
+//         color: @dark-gray;
+//       }
+//     }
+//     &.quote {
+//       .punctuation {
+//         color: @gray;
+//       }
+//     }
+//     &.code, .raw {
+//       color: @red;
+//       border: 1px solid mix(@code-background, @string-quoted-double, 90%);
+//       background-color: mix(@code-background, @string-quoted-double, 90%);
+//       border-radius: 3px;
+//     }
+//     &.link {
+//       .destination .uri {
+//         color: @green;
+//       }
+//       .string {
+//         color: @purple;
+//       }
+//     }
+//   }

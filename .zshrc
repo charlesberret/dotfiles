@@ -1,5 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:/bin:$PATH
+# osx path is set in /etc/paths
+# export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:/usr/local/bin/python:/usr/bin/python
 
 # Aliases and functions
 source $HOME/.aliases
@@ -104,3 +104,9 @@ if [ -f '/Users/charles/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/charles/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/charles/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# prepend the time
+PROMPT='%{$fg[cyan]%} %D{%H:%M} '$PROMPT
+
