@@ -29,7 +29,7 @@
     telemetryConsent: "no"
     themes: [
       "one-light-ui"
-      "one-light-syntax"
+      "atom-material-syntax-light"
     ]
     titleBar: "custom-inset"
   editor:
